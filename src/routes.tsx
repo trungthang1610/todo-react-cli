@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import HomePage from 'pages/Home';
 
+import TodosPage from 'pages/Todos';
+
 type RouteProps = {
   path: string;
   exact?: boolean;
@@ -11,7 +13,10 @@ type RouteProps = {
   routes?: RouteProps[] | undefined;
 };
 
-const routes: RouteProps[] = [{ path: '/', exact: true, component: HomePage }];
+const routes: RouteProps[] = [
+  { path: '/', exact: true, component: HomePage },
+  { path: '/todos', component: TodosPage },
+];
 
 const RouteWithSubRoutes: FC<RouteProps> = (route) => (
   <Route path={route.path} exact={route.exact} component={route.component} />

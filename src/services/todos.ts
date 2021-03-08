@@ -1,15 +1,15 @@
 import { AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
-import { FetchUserRequest, FetchUserResponse } from 'types';
+import { FetchTodosRequest, FetchTodosResponse } from 'types';
 
-export default class UsersService {
+export default class TodosService {
   private readonly axios: AxiosInstance;
   constructor(axios: AxiosInstance) {
     this.axios = axios;
   }
 
-  fetchTodo = (params: FetchUserRequest): AxiosPromise<FetchUserResponse> => {
+  fetchTodo = (params: FetchTodosRequest): AxiosPromise<FetchTodosResponse> => {
     const request: AxiosRequestConfig = {
-      url: '/',
+      url: '/todos',
       params: params,
     };
     return this.axios(request);

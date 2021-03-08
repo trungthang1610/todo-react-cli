@@ -2,16 +2,16 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TodoModel } from 'types';
 import { fetchTodo } from './thunks';
 
-export interface HeaderState {
+export interface TodosState {
   todos: TodoModel[];
 }
 
-const initialState: HeaderState = {
+const initialState: TodosState = {
   todos: [],
 };
 
-const headerSlice = createSlice({
-  name: 'header',
+const todosSlice = createSlice({
+  name: 'todos',
   initialState,
   reducers: {
     todo(state, action: PayloadAction<TodoModel[]>) {
@@ -29,5 +29,5 @@ const headerSlice = createSlice({
   },
 });
 
-export const { todo } = headerSlice.actions;
-export default headerSlice.reducer;
+export const { todo } = todosSlice.actions;
+export default todosSlice.reducer;

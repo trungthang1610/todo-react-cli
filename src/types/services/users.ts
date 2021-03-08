@@ -1,7 +1,7 @@
-export type FetchTodoRequest = {
+export type FetchUserRequest = {
   value: number;
 };
 
-export type FetchTodoResponse = {
+export type FetchUserResponse = {
   value: number;
 };
