@@ -1,10 +1,14 @@
 {
   "todos": {
-    "totalTodos": 1,
     "todos": [
       {
         "id": 1,
-        "title": "Lunch",
+        "title": "Post Three",
+        "completed": true
+      },
+      {
+        "id": 1,
+        "title": "Post Three",
         "completed": false
       }
     ]

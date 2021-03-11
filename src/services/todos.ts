@@ -1,5 +1,5 @@
 import { AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
-import { FetchTodosRequest, FetchTodosResponse } from 'types';
+import { CreateTodoRequest, CreateTodoResponse, FetchTodosRequest, FetchTodosResponse } from 'types';
 
 export default class TodosService {
   private readonly axios: AxiosInstance;
@@ -11,6 +11,15 @@ export default class TodosService {
     const request: AxiosRequestConfig = {
       url: '/todos',
       params: params,
+    };
+    return this.axios(request);
+  };
+
+  createTodo = (todo: CreateTodoRequest): AxiosPromise<CreateTodoResponse> => {
+    const request: AxiosRequestConfig = {
+      url: '/todos',
+      method: 'POST',
+      data: todo,
     };
     return this.axios(request);
   };
